@@ -22,6 +22,12 @@
 #import "<%= @prefixed_module %>VendorHeader.h"
 #import "<%= @prefixed_module %>ToolsHeader.h"
 
+#import <MTBaseKit/MTBaseKitHeader.h>
+#import <MTCategoryComponent/MTCategoryComponentHeader.h>
+#import <MTLayoutUtilityComponent/MTLayoutUtilityComponentHeader.h>
+#import <AssetModule/MTModuleImage.h>
+#import <MJExtension/MJExtension.h>
+
 #endif
 
 

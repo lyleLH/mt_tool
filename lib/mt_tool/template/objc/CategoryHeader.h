@@ -11,4 +11,5 @@
 
 #import <MTCategoryComponent/MTCategoryComponentHeader.h>
 
+
 #endif /* <%= @prefixed_module %>CategoryHeader_h */
