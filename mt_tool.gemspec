@@ -42,6 +42,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'thor'
   spec.add_dependency 'xcodeproj'
   spec.add_dependency 'colored'
+  spec.add_dependency 'colored2'
   spec.add_dependency 'pathname'
 
   # For more information and examples about making a new gem, check out our
