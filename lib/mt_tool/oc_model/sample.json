@@ -1,0 +1,11 @@
+{
+  "someString": "string",
+  "someInt": 42,
+  "someMinusInt": -42,
+  "someFloat": -4.2,
+  "someObject": {},
+  "someArray": [],
+  "someTrue": true,
+  "someFalse": false,
+  "someNull": null
+}

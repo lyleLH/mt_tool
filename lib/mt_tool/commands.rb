@@ -1,6 +1,8 @@
 
 require 'thor'
 require 'mt_tool/module/module'
+require 'mt_tool/oc_model/oc_model'
+
 module MtTool
   class CLI < Thor
     include Thor::Actions
@@ -21,6 +23,19 @@ module MtTool
 
     end
 
+    desc 'model_class <prefix> <class name > <json file path> <output path>', '根据json文件生成模型类'
+    method_option :create, aliases: '-c'
+    def model_class(prefix,name, path ,output_path)
+      OcModel.new(self .args,self .options ).create(prefix,name ,path,output_path)
+
+    end
+
+    desc 'qt_model_class <prefix> <class name > <json file path> <output path>', '使用quicktype根据json文件生成模型类'
+    method_option :create, aliases: '-c'
+    def qt_model_class(prefix,name, path ,output_path)
+      OcModel.new(self .args,self .options ).qt_create(prefix,name ,path,output_path)
+
+    end
 
   end
 end
