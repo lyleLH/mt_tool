@@ -42,8 +42,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'thor'
   spec.add_dependency 'xcodeproj'
   spec.add_dependency 'colored'
+  spec.add_dependency 'colored2'
   spec.add_dependency 'pathname'
-
+  spec.add_dependency 'mustache'
+  spec.add_dependency 'activesupport'
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
 end
