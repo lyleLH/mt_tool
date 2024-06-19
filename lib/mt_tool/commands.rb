@@ -23,6 +23,13 @@ module MtTool
 
     end
 
+
+    desc 'vmod  <module name > <author> <path> ', '生成viper模块文件'
+    method_option :vmod, aliases: '-v'
+    def generateViperModule(name,author, path )
+      Module.new(self .args,self .options).create_viper_module(path, name, "swift","", author)
+    end
+
     desc 'model_class <prefix> <class name > <json file path> <output path>', '根据json文件生成模型类'
     method_option :create, aliases: '-c'
     def model_class(prefix,name, path ,output_path)
@@ -36,6 +43,8 @@ module MtTool
       OcModel.new(self .args,self .options ).qt_create(prefix,name ,path,output_path)
 
     end
+
+
 
   end
 end

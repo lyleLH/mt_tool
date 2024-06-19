@@ -1,8 +1,23 @@
 # MtTool
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mt_tool`. To experiment with that code, run `bin/console` for an interactive prompt.
+Generate OC/Swift files for project or module.
 
-TODO: Delete this and the text above, and describe your gem
+<img src="69786f8e2a527b8c26f2c1311e230e5f.webp.png" alt="Module File Generator" height="150" width="150">
+
+
+Free your time, focus on real coding things.
+
+## Usage
+
+For viper module
+
+`mt_tool generateViperModule Canvas Tom.Liu ./`
+
+<img src="SCR-20240619-msnz.png" alt="Module File Generator">
+
+## Debug
+
+![config](https://github.com/lyleLH/image-repo/blob/master/images/SCR-20240619-mpdx.png?raw=true)
 
 ## Installation
 
@@ -14,10 +29,6 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
     $ gem install mt_tool
 
-## Usage
-
-TODO: Write usage instructions here
-
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -26,4 +37,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/mt_tool.
+Bug reports and pull requests are welcome on GitHub at https://github.com/lylelh/mt_tool.

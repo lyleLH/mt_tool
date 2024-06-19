@@ -129,6 +129,43 @@ module MtTool
         # FileUtils.remove_dir("#{@final_path}/.git", true)
       end
 
+      def create_viper_module(path = nil, name, lang, class_prefix, author)
+        @name = name
+        @module = @name
+        @lang = lang
+        @class_prefix = class_prefix
+        @final_path = "#{path}/#{@name}"
+        @author = author
+        @prefixed_module = @class_prefix + @module
+
+        say "generating file in path:#{@final_path}", :green
+
+        if File.exist?(@final_path.to_s)
+          say "#{@final_path} 已存在:", :red
+        else
+          mt_viper_module
+        end
+      end
+
+
+      def mt_viper_module
+        class_folder_path = "#{@final_path}"
+        class_folder_files= {
+          'Entity.swift' => 'Entity',
+          'Interactor.swift' => 'Entity',
+          'Presenter.swift' => 'Entity',
+          'Router.swift' => 'Entity',
+          'ViewController.swift' => 'Entity',
+        }
+
+        class_folder_files.each do |file_name, _folder|
+          final_file = "#{class_folder_path}/#{@prefixed_module}#{file_name}"
+          template "#{__dir__}/template/swift/#{file_name}", final_file
+        end
+
+      end
+
+
       def yk_module_folders
         class_folder_path = "#{@final_path}/#{@name}/Classes"
 
