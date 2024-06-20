@@ -2,7 +2,7 @@
 
 Generate OC/Swift files for project or module.
 
-<img src="69786f8e2a527b8c26f2c1311e230e5f.webp.png" alt="Module File Generator" height="150" width="150">
+<img src="img/69786f8e2a527b8c26f2c1311e230e5f.webp.png" alt="Module File Generator" height="150" width="150">
 
 
 Free your time, focus on real coding things.
@@ -13,7 +13,7 @@ For viper module
 
 `mt_tool generateViperModule Canvas Tom.Liu ./`
 
-<img src="SCR-20240619-msnz.png" alt="Module File Generator">
+<img src="img/SCR-20240619-msnz.png" alt="Module File Generator">
 
 ## Debug
 
