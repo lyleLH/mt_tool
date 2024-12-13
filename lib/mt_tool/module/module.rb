@@ -121,7 +121,7 @@ module MtTool
       def prepare_folder
         host_a = 'yeah'
         host_b = 'ka'
-        template_repo_url = "http://gitlab.#{host_a}#{host_b}.com/App/iOS/YKComponents/YKProjectTemplate.git"
+        template_repo_url = "https://github.com/lyleLH/tom-pod-template"
         system("git clone #{template_repo_url} #{@final_path}")
 
         # FileUtils.remove_dir(@final_path, true)

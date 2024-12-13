@@ -13,39 +13,34 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.6.0"
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/lyleLH/mt_tool"
+  spec.license = "MIT"
 
   # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files = Dir.chdir(__dir__) do
-    `git ls-files -z`.split("\x0").reject do |f|
-      (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
-    end
-  end
+  spec.files = Dir[
+    "lib/**/*",
+    "bin/*",
+    "*.gemspec",
+    "README.md",
+    "Gemfile",
+    "Rakefile"
+  ]
   spec.bindir = "bin"
-  # spec.executables = spec.files.grep(%r{\Abin/}) { |f| File.basename(f) }
   spec.executables << 'mt_tool'
   spec.require_paths = ["lib"]
 
+  # Runtime dependencies
+  spec.add_dependency 'thor', '~> 1.2'
+  spec.add_dependency 'xcodeproj', '~> 1.22'
+  spec.add_dependency 'colored', '~> 1.2'
+  spec.add_dependency 'colored2', '~> 3.1'
+  spec.add_dependency 'pathname', '~> 0.2'
+  spec.add_dependency 'mustache', '~> 1.1'
+  spec.add_dependency 'activesupport', '~> 7.0'
 
-  # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
-  spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'thor'
-  spec.add_development_dependency 'colored'
-  spec.add_development_dependency 'colored2'
-  spec.add_development_dependency 'rspec', '~> 3.2'
-  spec.add_development_dependency 'xcodeproj'
-  spec.add_development_dependency 'cocoapods'
-  spec.add_development_dependency 'cocoapods-core'
-
-  spec.add_dependency 'bundler'
-  spec.add_dependency 'thor'
-  spec.add_dependency 'xcodeproj'
-  spec.add_dependency 'colored'
-  spec.add_dependency 'colored2'
-  spec.add_dependency 'pathname'
-  spec.add_dependency 'mustache'
-  spec.add_dependency 'activesupport'
-  # For more information and examples about making a new gem, check out our
-  # guide at: https://bundler.io/guides/creating_gem.html
+  # Development dependencies
+  spec.add_development_dependency 'bundler', '~> 2.3'
+  spec.add_development_dependency 'rake', '~> 13.0'
+  spec.add_development_dependency 'rspec', '~> 3.12'
+  spec.add_development_dependency 'pry', '~> 0.14'
+  spec.add_development_dependency 'pry-byebug', '~> 3.10'
 end

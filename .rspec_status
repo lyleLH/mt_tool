@@ -1,0 +1,8 @@
+example_id                           | status | run_time        |
+------------------------------------ | ------ | --------------- |
+./spec/mt_tool/cli_spec.rb[1:1:1]    | passed | 0.00836 seconds |
+./spec/mt_tool/cli_spec.rb[1:1:2]    | passed | 0.00312 seconds |
+./spec/mt_tool/cli_spec.rb[1:1:3]    | passed | 0.00094 seconds |
+./spec/mt_tool/module_spec.rb[1:1:1] | passed | 0.0033 seconds  |
+./spec/mt_tool/module_spec.rb[1:1:2] | passed | 0.00217 seconds |
+./spec/mt_tool/module_spec.rb[1:1:3] | passed | 0.00247 seconds |

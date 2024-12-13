@@ -12,5 +12,5 @@ protocol <%= @prefixed_module %>InteractorProtocol {
 }
 
 class <%= @prefixed_module %>Interactor: <%= @prefixed_module %>InteractorProtocol {
-    weak var presenter: <%= @prefixed_module %>PresenterProtocol?
+
 }

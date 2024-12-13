@@ -1,40 +1,93 @@
 # MtTool
 
-Generate OC/Swift files for project or module.
+A Ruby gem for generating VIPER architecture modules for iOS projects. Supports both Swift and Objective-C.
 
 <img src="img/69786f8e2a527b8c26f2c1311e230e5f.webp.png" alt="Module File Generator" height="150" width="150">
 
+## Features
 
-Free your time, focus on real coding things.
-
-## Usage
-
-For viper module
-
-`mt_tool generateViperModule Canvas Tom.Liu ./`
-
-<img src="img/SCR-20240619-msnz.png" alt="Module File Generator">
-
-## Debug
-
-![config](https://github.com/lyleLH/image-repo/blob/master/images/SCR-20240619-mpdx.png?raw=true)
+- Generate complete VIPER module structure
+- Support for both Swift and Objective-C
+- Customizable templates
+- Command-line interface
+- Detailed logging for debugging
 
 ## Installation
 
-Install the gem and add to the application's Gemfile by executing:
+Add this line to your application's Gemfile:
 
-    $ bundle add mt_tool
+```ruby
+gem 'mt_tool'
+```
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+And then execute:
+```bash
+$ bundle install
+```
 
-    $ gem install mt_tool
+Or install it yourself as:
+```bash
+$ gem install mt_tool
+```
+
+## Usage
+
+### Generating a VIPER Module
+
+```bash
+# Generate a VIPER module
+mt_tool vmod -n ModuleName -a "Author Name" -p ./path/to/module
+
+# Example
+mt_tool vmod -n HomeScreen -a "Tom Liu" -p ./Modules
+```
+
+### Command Options
+
+- `-n, --name`: Module name (required)
+- `-a, --author`: Author name (required)
+- `-p, --path`: Target path for generation (required)
+
+### Generated Structure
+
+```
+ModuleName/
+├── ModuleNameEntity.swift
+├── ModuleNameInteractor.swift
+├── ModuleNamePresenter.swift
+├── ModuleNameRouter.swift
+└── ModuleNameViewController.swift
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bundle install` to install dependencies.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To run the test suite:
+```bash
+bundle exec rake test
+```
+
+To install this gem onto your local machine:
+```bash
+bundle exec rake install
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/lylelh/mt_tool.
+1. Fork it
+2. Create your feature branch (`git checkout -b feature/my-new-feature`)
+3. Add tests for your changes
+4. Make your changes
+5. Run the tests (`bundle exec rake test`)
+6. Commit your changes (`git commit -am 'Add some feature'`)
+7. Push to the branch (`git push origin feature/my-new-feature`)
+8. Create new Pull Request
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the MtTool project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/lylelh/mt_tool/blob/master/CODE_OF_CONDUCT.md).
