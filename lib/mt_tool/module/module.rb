@@ -1,4 +1,3 @@
-
 require 'colored'
 require 'fileutils'
 require 'psych'
@@ -137,6 +136,8 @@ module MtTool
         @final_path = "#{path}/#{@name}"
         @author = author
         @prefixed_module = @class_prefix + @module
+        @project = @name
+        @date = Time.now.strftime('%Y-%m-%d')
 
         say "generating file in path:#{@final_path}", :green
 
@@ -156,6 +157,7 @@ module MtTool
           'Presenter.swift' => 'Entity',
           'Router.swift' => 'Entity',
           'ViewController.swift' => 'Entity',
+          'Assembly.swift' => 'Entity',
         }
 
         class_folder_files.each do |file_name, _folder|

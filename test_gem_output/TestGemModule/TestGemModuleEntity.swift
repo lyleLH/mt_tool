@@ -1,14 +1,14 @@
 //
-//  <%= @prefixed_module %>Entity.swift
-//  <%= @project %>
+//  TestGemModuleEntity.swift
+//  TestGemModule
 //
-//  Created by <%= @author %> on <%= @date %>.
+//  Created by Test Author on 2024-12-13.
 //
 
 import Foundation
 
 // MARK: - Models
-struct <%= @prefixed_module %>Entity: Codable {
+struct TestGemModuleEntity: Codable {
     // TODO: Add model properties
     
     // Example:
@@ -18,11 +18,11 @@ struct <%= @prefixed_module %>Entity: Codable {
 }
 
 // MARK: - Request Models
-struct <%= @prefixed_module %>Request: Codable {
+struct TestGemModuleRequest: Codable {
     // TODO: Add request model properties
 }
 
 // MARK: - Response Models
-struct <%= @prefixed_module %>Response: Codable {
+struct TestGemModuleResponse: Codable {
     // TODO: Add response model properties
 }

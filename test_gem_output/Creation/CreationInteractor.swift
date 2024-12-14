@@ -1,30 +1,30 @@
 //
-//  <%= @prefixed_module %>Interactor.swift
-//  <%= @project %>
+//  CreationInteractor.swift
+//  Creation
 //
-//  Created by <%= @author %> on <%= @date %>.
+//  Created by Tom.Liu on 2024-12-13.
 //
 
 import Foundation
 
 // MARK: - Interactor Protocol
-protocol <%= @prefixed_module %>InteractorProtocol: AnyObject {
-    var presenter: <%= @prefixed_module %>InteractorToPresenterProtocol? { get set }
+protocol CreationInteractorProtocol: AnyObject {
+    var presenter: CreationInteractorToPresenterProtocol? { get set }
     
-    func fetchData(request: <%= @prefixed_module %>Request)
+    func fetchData(request: CreationRequest)
     func performAction()
 }
 
 // MARK: - Presenter to Interactor Protocol
-protocol <%= @prefixed_module %>InteractorToPresenterProtocol: AnyObject {
-    func didFetchData(response: <%= @prefixed_module %>Response)
+protocol CreationInteractorToPresenterProtocol: AnyObject {
+    func didFetchData(response: CreationResponse)
     func didFailToFetchData(error: Error)
     func didCompleteAction()
 }
 
 // MARK: - Interactor Implementation
-final class <%= @prefixed_module %>Interactor {
-    weak var presenter: <%= @prefixed_module %>InteractorToPresenterProtocol?
+final class CreationInteractor {
+    weak var presenter: CreationInteractorToPresenterProtocol?
     
     // MARK: - Private Properties
     private let service: NetworkServiceProtocol // Replace with your actual service
@@ -35,9 +35,9 @@ final class <%= @prefixed_module %>Interactor {
     }
 }
 
-// MARK: - <%= @prefixed_module %>InteractorProtocol
-extension <%= @prefixed_module %>Interactor: <%= @prefixed_module %>InteractorProtocol {
-    func fetchData(request: <%= @prefixed_module %>Request) {
+// MARK: - CreationInteractorProtocol
+extension CreationInteractor: CreationInteractorProtocol {
+    func fetchData(request: CreationRequest) {
         // TODO: Implement data fetching logic
         // Example:
         // service.fetch(request) { [weak self] result in

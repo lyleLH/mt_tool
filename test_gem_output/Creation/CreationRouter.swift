@@ -1,23 +1,23 @@
 //
-//  <%= @prefixed_module %>Router.swift
-//  <%= @project %>
+//  CreationRouter.swift
+//  Creation
 //
-//  Created by <%= @author %> on <%= @date %>.
+//  Created by Tom.Liu on 2024-12-13.
 //
 
 import UIKit
 
 // MARK: - Router Protocol
-protocol <%= @prefixed_module %>RouterProtocol: AnyObject {
+protocol CreationRouterProtocol: AnyObject {
     var viewController: UIViewController { get }
     
-    static func createModule() -> <%= @prefixed_module %>Router
+    static func createModule() -> CreationRouter
     @MainActor func navigateToNextScreen()
     @MainActor func navigateBack()
 }
 
 // MARK: - Router Implementation
-final class <%= @prefixed_module %>Router {
+final class CreationRouter {
     // MARK: - Properties
     internal var viewController: UIViewController
     
@@ -31,11 +31,11 @@ final class <%= @prefixed_module %>Router {
     }
 }
 
-// MARK: - <%= @prefixed_module %>RouterProtocol
-extension <%= @prefixed_module %>Router: <%= @prefixed_module %>RouterProtocol {
-    static func createModule() -> <%= @prefixed_module %>Router {
-        let view: <%= @prefixed_module %>ViewController = DIContainer.shared.resolve()
-        let router: <%= @prefixed_module %>Router = DIContainer.shared.resolve(argument: view)
+// MARK: - CreationRouterProtocol
+extension CreationRouter: CreationRouterProtocol {
+    static func createModule() -> CreationRouter {
+        let view: CreationViewController = DIContainer.shared.resolve()
+        let router: CreationRouter = DIContainer.shared.resolve(argument: view)
         return router
     }
     

@@ -1,29 +1,29 @@
 //
-//  <%= @prefixed_module %>ViewController.swift
-//  <%= @project %>
+//  TestGemModuleViewController.swift
+//  TestGemModule
 //
-//  Created by <%= @author %> on <%= @date %>.
+//  Created by Test Author on 2024-12-13.
 //
 
 import UIKit
 
 // MARK: - View Protocol
-protocol <%= @prefixed_module %>ViewProtocol: AnyObject {
-    var presenter: <%= @prefixed_module %>PresenterProtocol? { get set }
+protocol TestGemModuleViewProtocol: AnyObject {
+    var presenter: TestGemModulePresenterProtocol? { get set }
     
     func showLoading()
     func hideLoading()
     func showError(message: String)
-    func updateUI(with items: [<%= @prefixed_module %>Entity])
+    func updateUI(with items: [TestGemModuleEntity])
 }
 
 // MARK: - Entry Point
-typealias <%= @prefixed_module %>EntryPoint = <%= @prefixed_module %>ViewController
+typealias TestGemModuleEntryPoint = TestGemModuleViewController
 
 // MARK: - View Controller
-final class <%= @prefixed_module %>ViewController: UIViewController {
+final class TestGemModuleViewController: UIViewController {
     // MARK: - Properties
-    var presenter: <%= @prefixed_module %>PresenterProtocol?
+    var presenter: TestGemModulePresenterProtocol?
     
     // MARK: - UI Components
     private lazy var loadingIndicator: UIActivityIndicatorView = {
@@ -65,7 +65,7 @@ final class <%= @prefixed_module %>ViewController: UIViewController {
     // MARK: - Private Methods
     private func setupUI() {
         view.backgroundColor = .systemBackground
-        title = "<%= @prefixed_module %>"
+        title = "TestGemModule"
         
         view.addSubview(contentStackView)
         view.addSubview(loadingIndicator)
@@ -86,8 +86,8 @@ final class <%= @prefixed_module %>ViewController: UIViewController {
     }
 }
 
-// MARK: - <%= @prefixed_module %>ViewProtocol
-extension <%= @prefixed_module %>ViewController: <%= @prefixed_module %>ViewProtocol {
+// MARK: - TestGemModuleViewProtocol
+extension TestGemModuleViewController: TestGemModuleViewProtocol {
     func showLoading() {
         loadingIndicator.startAnimating()
         view.isUserInteractionEnabled = false
@@ -104,7 +104,7 @@ extension <%= @prefixed_module %>ViewController: <%= @prefixed_module %>ViewProt
         present(alert, animated: true)
     }
     
-    func updateUI(with items: [<%= @prefixed_module %>Entity]) {
+    func updateUI(with items: [TestGemModuleEntity]) {
         // TODO: Update UI with items
         // Example:
         // items.forEach { item in

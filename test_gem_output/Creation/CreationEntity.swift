@@ -1,14 +1,14 @@
 //
-//  <%= @prefixed_module %>Entity.swift
-//  <%= @project %>
+//  CreationEntity.swift
+//  Creation
 //
-//  Created by <%= @author %> on <%= @date %>.
+//  Created by Tom.Liu on 2024-12-13.
 //
 
 import Foundation
 
 // MARK: - Models
-struct <%= @prefixed_module %>Entity: Codable {
+struct CreationEntity: Codable {
     // TODO: Add model properties
     
     // Example:
@@ -18,11 +18,11 @@ struct <%= @prefixed_module %>Entity: Codable {
 }
 
 // MARK: - Request Models
-struct <%= @prefixed_module %>Request: Codable {
+struct CreationRequest: Codable {
     // TODO: Add request model properties
 }
 
 // MARK: - Response Models
-struct <%= @prefixed_module %>Response: Codable {
+struct CreationResponse: Codable {
     // TODO: Add response model properties
 }

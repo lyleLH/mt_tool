@@ -1,30 +1,30 @@
 //
-//  <%= @prefixed_module %>Interactor.swift
-//  <%= @project %>
+//  TestGemModuleInteractor.swift
+//  TestGemModule
 //
-//  Created by <%= @author %> on <%= @date %>.
+//  Created by Test Author on 2024-12-13.
 //
 
 import Foundation
 
 // MARK: - Interactor Protocol
-protocol <%= @prefixed_module %>InteractorProtocol: AnyObject {
-    var presenter: <%= @prefixed_module %>InteractorToPresenterProtocol? { get set }
+protocol TestGemModuleInteractorProtocol: AnyObject {
+    var presenter: TestGemModuleInteractorToPresenterProtocol? { get set }
     
-    func fetchData(request: <%= @prefixed_module %>Request)
+    func fetchData(request: TestGemModuleRequest)
     func performAction()
 }
 
 // MARK: - Presenter to Interactor Protocol
-protocol <%= @prefixed_module %>InteractorToPresenterProtocol: AnyObject {
-    func didFetchData(response: <%= @prefixed_module %>Response)
+protocol TestGemModuleInteractorToPresenterProtocol: AnyObject {
+    func didFetchData(response: TestGemModuleResponse)
     func didFailToFetchData(error: Error)
     func didCompleteAction()
 }
 
 // MARK: - Interactor Implementation
-final class <%= @prefixed_module %>Interactor {
-    weak var presenter: <%= @prefixed_module %>InteractorToPresenterProtocol?
+final class TestGemModuleInteractor {
+    weak var presenter: TestGemModuleInteractorToPresenterProtocol?
     
     // MARK: - Private Properties
     private let service: NetworkServiceProtocol // Replace with your actual service
@@ -35,9 +35,9 @@ final class <%= @prefixed_module %>Interactor {
     }
 }
 
-// MARK: - <%= @prefixed_module %>InteractorProtocol
-extension <%= @prefixed_module %>Interactor: <%= @prefixed_module %>InteractorProtocol {
-    func fetchData(request: <%= @prefixed_module %>Request) {
+// MARK: - TestGemModuleInteractorProtocol
+extension TestGemModuleInteractor: TestGemModuleInteractorProtocol {
+    func fetchData(request: TestGemModuleRequest) {
         // TODO: Implement data fetching logic
         // Example:
         // service.fetch(request) { [weak self] result in

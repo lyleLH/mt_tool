@@ -1,23 +1,23 @@
 //
-//  <%= @prefixed_module %>Router.swift
-//  <%= @project %>
+//  TestGemModuleRouter.swift
+//  TestGemModule
 //
-//  Created by <%= @author %> on <%= @date %>.
+//  Created by Test Author on 2024-12-13.
 //
 
 import UIKit
 
 // MARK: - Router Protocol
-protocol <%= @prefixed_module %>RouterProtocol: AnyObject {
+protocol TestGemModuleRouterProtocol: AnyObject {
     var viewController: UIViewController { get }
     
-    static func createModule() -> <%= @prefixed_module %>Router
+    static func createModule() -> TestGemModuleRouter
     @MainActor func navigateToNextScreen()
     @MainActor func navigateBack()
 }
 
 // MARK: - Router Implementation
-final class <%= @prefixed_module %>Router {
+final class TestGemModuleRouter {
     // MARK: - Properties
     internal var viewController: UIViewController
     
@@ -31,11 +31,11 @@ final class <%= @prefixed_module %>Router {
     }
 }
 
-// MARK: - <%= @prefixed_module %>RouterProtocol
-extension <%= @prefixed_module %>Router: <%= @prefixed_module %>RouterProtocol {
-    static func createModule() -> <%= @prefixed_module %>Router {
-        let view: <%= @prefixed_module %>ViewController = DIContainer.shared.resolve()
-        let router: <%= @prefixed_module %>Router = DIContainer.shared.resolve(argument: view)
+// MARK: - TestGemModuleRouterProtocol
+extension TestGemModuleRouter: TestGemModuleRouterProtocol {
+    static func createModule() -> TestGemModuleRouter {
+        let view: TestGemModuleViewController = DIContainer.shared.resolve()
+        let router: TestGemModuleRouter = DIContainer.shared.resolve(argument: view)
         return router
     }
     

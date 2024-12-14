@@ -1,29 +1,29 @@
 //
-//  <%= @prefixed_module %>ViewController.swift
-//  <%= @project %>
+//  CreationViewController.swift
+//  Creation
 //
-//  Created by <%= @author %> on <%= @date %>.
+//  Created by Tom.Liu on 2024-12-13.
 //
 
 import UIKit
 
 // MARK: - View Protocol
-protocol <%= @prefixed_module %>ViewProtocol: AnyObject {
-    var presenter: <%= @prefixed_module %>PresenterProtocol? { get set }
+protocol CreationViewProtocol: AnyObject {
+    var presenter: CreationPresenterProtocol? { get set }
     
     func showLoading()
     func hideLoading()
     func showError(message: String)
-    func updateUI(with items: [<%= @prefixed_module %>Entity])
+    func updateUI(with items: [CreationEntity])
 }
 
 // MARK: - Entry Point
-typealias <%= @prefixed_module %>EntryPoint = <%= @prefixed_module %>ViewController
+typealias CreationEntryPoint = CreationViewController
 
 // MARK: - View Controller
-final class <%= @prefixed_module %>ViewController: UIViewController {
+final class CreationViewController: UIViewController {
     // MARK: - Properties
-    var presenter: <%= @prefixed_module %>PresenterProtocol?
+    var presenter: CreationPresenterProtocol?
     
     // MARK: - UI Components
     private lazy var loadingIndicator: UIActivityIndicatorView = {
@@ -65,7 +65,7 @@ final class <%= @prefixed_module %>ViewController: UIViewController {
     // MARK: - Private Methods
     private func setupUI() {
         view.backgroundColor = .systemBackground
-        title = "<%= @prefixed_module %>"
+        title = "Creation"
         
         view.addSubview(contentStackView)
         view.addSubview(loadingIndicator)
@@ -86,8 +86,8 @@ final class <%= @prefixed_module %>ViewController: UIViewController {
     }
 }
 
-// MARK: - <%= @prefixed_module %>ViewProtocol
-extension <%= @prefixed_module %>ViewController: <%= @prefixed_module %>ViewProtocol {
+// MARK: - CreationViewProtocol
+extension CreationViewController: CreationViewProtocol {
     func showLoading() {
         loadingIndicator.startAnimating()
         view.isUserInteractionEnabled = false
@@ -104,7 +104,7 @@ extension <%= @prefixed_module %>ViewController: <%= @prefixed_module %>ViewProt
         present(alert, animated: true)
     }
     
-    func updateUI(with items: [<%= @prefixed_module %>Entity]) {
+    func updateUI(with items: [CreationEntity]) {
         // TODO: Update UI with items
         // Example:
         // items.forEach { item in
